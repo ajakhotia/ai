@@ -1,0 +1,29 @@
+{
+  "theme": "auto",
+  "tui": "fullscreen",
+  "permissions": {
+    "allow": [
+      "Edit(//home/ajakhotia/sandbox/ai/**)",
+      "Write(//home/ajakhotia/sandbox/ai/**)",
+      "Edit(//home/ajakhotia/.claude/**)",
+      "Write(//home/ajakhotia/.claude/**)",
+      "Bash(mkdir:*)",
+      "Bash(rm -rf /home/ajakhotia/sandbox/ai/*)",
+      "Bash(rm -rf ~/sandbox/ai/*)",
+      "Bash(rm -r /home/ajakhotia/sandbox/ai/*)",
+      "Bash(rm -r ~/sandbox/ai/*)",
+      "Bash(rm -f /home/ajakhotia/sandbox/ai/*)",
+      "Bash(rm -f ~/sandbox/ai/*)",
+      "Bash(rm /home/ajakhotia/sandbox/ai/*)",
+      "Bash(rm ~/sandbox/ai/*)",
+      "Bash(rm -rf /home/ajakhotia/.claude/*)",
+      "Bash(rm -rf ~/.claude/*)",
+      "Bash(rm -r /home/ajakhotia/.claude/*)",
+      "Bash(rm -r ~/.claude/*)",
+      "Bash(rm -f /home/ajakhotia/.claude/*)",
+      "Bash(rm -f ~/.claude/*)",
+      "Bash(rm /home/ajakhotia/.claude/*)",
+      "Bash(rm ~/.claude/*)"
+    ]
+  }
+}
