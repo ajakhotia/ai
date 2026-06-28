@@ -1,6 +1,4 @@
 {
-  "theme": "auto",
-  "tui": "fullscreen",
   "permissions": {
     "allow": [
       "Edit(//home/ajakhotia/sandbox/ai/**)",
@@ -23,7 +21,24 @@
       "Bash(rm -f /home/ajakhotia/.claude/*)",
       "Bash(rm -f ~/.claude/*)",
       "Bash(rm /home/ajakhotia/.claude/*)",
-      "Bash(rm ~/.claude/*)"
+      "Bash(rm ~/.claude/*)",
+      "Bash(cmake --preset *)",
+      "Bash(cmake --build *)",
+      "Bash(ctest *)",
+      "Bash(rm -rf build/claude-debug)",
+      "Bash(rm -rf build/claude-release)",
+      "Skill(configure)",
+      "Skill(build)",
+      "Skill(test)",
+      "Skill(format)",
+      "Skill(tidy)",
+      "Skill(clean)"
     ]
-  }
+  },
+  "tui": "fullscreen",
+  "skipWorkflowUsageWarning": true,
+  "theme": "auto",
+  "agentPushNotifEnabled": true,
+  "inputNeededNotifEnabled": true,
+  "remoteControlAtStartup": true
 }
