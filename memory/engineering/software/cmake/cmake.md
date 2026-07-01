@@ -6,11 +6,9 @@
 
 Modern, target-centric CMake throughout.
 
-## Project composition — the root owns everything
-- Every project has the same shape: the **root project** sets up *all* infrastructure (shared commons/helpers, container-image targets, the code-format/lint targets) and declares **every submodule flat** under its own `external/`.
-- **Submodules are flat and never recurse**: the root declares all of them and checks them out **non-recursively**, so there is **exactly one copy** of each and no infinite submodule recursion. A submodule may carry its own submodule declarations — that is not a contradiction; they are consumed only when that submodule is itself the root, and stay dormant under a parent root.
-- The **complete state of a project = the root's checkout + its flat submodule checkouts.** A submodule's own tooling/infra is irrelevant when it is not the root.
-- Enforced with `if(PROJECT_IS_TOP_LEVEL)`: infra includes, the format/lint targets, and `add_subdirectory()` of external/infra/docker live **only** inside that block, so a project never overreaches when built as a submodule.
+## Project composition — CMake instantiation (concept in `engineering`, submodule mechanics in `software`)
+- Submodules are declared **flat under the root's `external/`** and pulled into the build with explicit `add_subdirectory()`.
+- `if(PROJECT_IS_TOP_LEVEL)` is the concrete *is-top-level* gate: infra `include()`s, the `clangFormat`/`clangTidy` targets, container-image targets, and `add_subdirectory()` of `external`/infra/`docker` live **only** inside that block, so a project never overreaches when built as a submodule.
 
 ## Authoring style
 - **Commands lowercase; keyword arguments and operators UPPERCASE** (`find_package(Foo REQUIRED)`, `if((TARGET A) AND (TARGET B))`). 2-space indent, no tabs.
